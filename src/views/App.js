@@ -1,12 +1,14 @@
+import Kiet from './example/myComponent';
 import logo from './logo.svg';
-import './App.css';
-
+import './App.scss';
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
+          <Kiet></Kiet>
+
           thanh thanh
         </p>
         <a
@@ -17,8 +19,12 @@ function App() {
         >
           Learn React
         </a>
+
       </header>
+
+
     </div>
+
   );
 }
 
