@@ -11,6 +11,10 @@ class Kiet extends React.Component {
         }
         )
     }
+    handleClickButton = () => {
+        console.log('thanh thanh')
+        alert('click me')
+    }
 
     render() {
         let name = ' Kiet';
@@ -21,6 +25,9 @@ class Kiet extends React.Component {
                 />
                 <h2 className='thanh'>Hi, I am  {name}!</h2>
                 <div> haizz:{this.state.name}</div>
+                <div className="third">
+                    <button onClick={() => this.handleClickButton()}>click me</button>
+                </div>
             </>
 
         )
