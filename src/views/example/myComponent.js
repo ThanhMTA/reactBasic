@@ -1,33 +1,58 @@
 import React from 'react';
+import ChildComponent from './ChildComponent';
 
 class Kiet extends React.Component {
     state = {
-        name: "thanh",
-        channel: "hoc reactjs"
+        firstName: 'trinh',
+        lastName: 'thanh',
+        arrJobs: [
+
+            { id: '1', title: 'developer', salary: '500$' },
+            { id: '2', title: 'Tester', salary: '400$' },
+            { id: '3', title: 'dev', salary: '600$' }
+        ]
+
     }
-    handleOnchangeName = (event) => {
+    handleChangelLastName = (event) => {
         this.setState({
-            name: event.target.value
-        }
-        )
+            lastName: event.target.value
+        })
     }
-    handleClickButton = () => {
-        console.log('thanh thanh')
-        alert('click me')
+    handleFirstName = (event) => {
+        this.setState({
+            firstName: event.target.value
+        })
+    }
+    handleSubmit = (event) => {
+        event.preventDefault()
+        console.log(' check data input :', this.state)
     }
 
     render() {
-        let name = ' Kiet';
+
         return (
             <>
-                <input value={this.state.name} type='text'
-                    onChange={(event) => this.handleOnchangeName(event)}
+                <form>
+                    <label for="fname">First name:</label><br />
+                    <input type="text"
+                        value={this.state.firstName}
+                        onChange={(event) => this.handleFirstName(event)}
+                    />
+                    <br />
+                    <label for="lname">Last name:</label><br />
+                    <input type="text"
+                        value={this.state.lastName}
+                        onChange={(event) => this.handleChangelLastName(event)}
+                    />
+                    <br />
+                    <input type="Submit" value="Submit" onClick={(event) => this.handleSubmit(event)} />
+                </form>
+                <ChildComponent
+                    name={this.state.firstName}
+                    age={'25'}
+                    arrJobs={this.state.arrJobs}
                 />
-                <h2 className='thanh'>Hi, I am  {name}!</h2>
-                <div> haizz:{this.state.name}</div>
-                <div className="third">
-                    <button onClick={() => this.handleClickButton()}>click me</button>
-                </div>
+
             </>
 
         )

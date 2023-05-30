@@ -9,7 +9,7 @@ function App() {
         <p>
           <Kiet></Kiet>
 
-          thanh thanh
+
         </p>
         <a
           className="App-link"
