@@ -1,14 +1,15 @@
 import Kiet from './example/myComponent';
 import logo from './logo.svg';
 import './App.scss';
+// import Header from '../components/Header';
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
-          <Kiet></Kiet>
 
+          <Kiet />
 
         </p>
         <a
@@ -18,6 +19,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
+
         </a>
 
       </header>
