@@ -19,7 +19,13 @@ class Kiet extends React.Component {
             arrJobs: [...this.state.arrJobs, job]
         })
     }
-
+    deleteAjob = (job) => {
+        let currentJobs = this.state.arrJobs;
+        currentJobs = currentJobs.filter(item => item.id !== job.id)
+        this.setState({
+            arrJobs: currentJobs
+        })
+    }
     render() {
 
         return (
@@ -33,6 +39,7 @@ class Kiet extends React.Component {
                     name={this.state.firstName}
                     age={'25'}
                     arrJobs={this.state.arrJobs}
+                    deleteAjob={this.deleteAjob}
                 />
 
             </>
