@@ -13,6 +13,7 @@ import {
   Link,
   Switch
 } from "react-router-dom";
+import ListUser from './Users/ListUser';
 // import Header from '../components/Header';
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
             </Route>
             <Route path="/about">
               <Kiet />
+            </Route>
+            <Route path="/user">
+              <ListUser />
             </Route>
           </Switch>
 
